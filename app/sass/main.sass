@@ -1,0 +1,29 @@
+.container
+  margin: 0 auto
+  width: 400px
+  display: flex
+  flex-direction: column
+  .row
+    display: flex
+    justify-content: space-around
+    
+.blocks
+  .block
+    width: 80px
+    height: 80px
+    margin-bottom: 15px
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 1px solid #000
+    opacity: 1
+    transition: opacity 1s
+    &.hide_class
+      opacity: 0
+    
+.buttons
+  .button_container
+    display: flex
+    flex-direction: column
+    button
+      margin-bottom: 5px
