@@ -35,12 +35,39 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid #000;
-  opacity: 1;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s; }
+  border: 1px solid #000; }
   .blocks .block.hide_class {
+    -webkit-animation: fade_out 1s;
+            animation: fade_out 1s; }
+  .blocks .block.show_class {
+    -webkit-animation: fade_in 1s;
+            animation: fade_in 1s; }
+  .blocks .block.op0 {
     opacity: 0; }
+
+@-webkit-keyframes fade_out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes fade_out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@-webkit-keyframes fade_in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade_in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 .buttons .button_container {
   display: -webkit-box;

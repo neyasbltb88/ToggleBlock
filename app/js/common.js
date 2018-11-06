@@ -5,7 +5,8 @@ var block_1 = document.querySelector('.block.block_1'),
 window.toggleBlock = new ToggleBlock({
     elem: block_1,
     trigger: button_1,
-    hideClass: 'hide_class'
+    hideClass: 'hide_class',
+    showClass: 'show_class'
 });
 
 // --- Расширенное применение (вызов методов экземпляра)  ---

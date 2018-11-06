@@ -2,6 +2,7 @@ function ToggleBlock(param) {
     var elem = param.elem,
         trigger = param.trigger,
         hideClass = param.hideClass,
+        showClass = param.showClass,
         self = this;
 
     function hideEnd(e) {
@@ -13,7 +14,7 @@ function ToggleBlock(param) {
     function init(elem, trigger) {
         if (elem) {
             elem.addEventListener('transitionend', hideEnd);
-            elem.addEventListener('animation', hideEnd);
+            elem.addEventListener('animationend', hideEnd);
             if (trigger) {
                 trigger.addEventListener('click', self.toggle);
             }
@@ -23,16 +24,25 @@ function ToggleBlock(param) {
     }
 
     this.show = function() {
-        if (elem.classList.contains(hideClass)) {
-            elem.style.display = '';
-        }
+        elem.style.display = '';
         setTimeout(function() {
-            elem.classList.remove(hideClass);
-        }, 0)
+            if (showClass) {
+                console.log(showClass);
+                elem.classList.add(showClass);
+            }
+            setTimeout(function() {
+                console.log(hideClass);
+                elem.classList.remove(hideClass);
+            }, 0)
+        }, 50)
     }
     this.hide = function() {
         setTimeout(function() {
+            if (showClass) {
+                elem.classList.remove(showClass);
+            }
             elem.classList.add(hideClass);
+
         }, 0)
     }
     this.toggle = function() {

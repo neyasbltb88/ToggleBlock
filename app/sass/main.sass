@@ -16,11 +16,27 @@
     justify-content: center
     align-items: center
     border: 1px solid #000
-    opacity: 1
-    transition: opacity 1s
+    // transition: opacity 1s
     &.hide_class
+      // opacity: 0
+      animation: fade_out 1s
+    &.show_class
+      animation: fade_in 1s
+    &.op0
       opacity: 0
     
+@keyframes fade_out
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+
+@keyframes fade_in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
 .buttons
   .button_container
     display: flex
